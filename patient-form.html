@@ -6,3 +6,301 @@ Date last edited: June 20, 2026
 Version: 1.0
 Description: Patient registration and learning how to use html to create forum
 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Daylight Medical Services</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function displayDate() {
+            var today = new Date();
+
+            var options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+
+            document.getElementById("todayDate").innerHTML =
+                today.toLocaleDateString("en-US", options);
+        }
+    </script>
+
+</head>
+
+<body onload="displayDate()">
+
+    <!-- Banner Section -->
+
+    <div class="banner">
+
+        <img src="logo.png" alt="Medical Logo" width="80">
+
+        <h1>Daylight Medical Services</h1>
+
+        <h2>Patient Registration Form</h2>
+
+        <h3>New Account Setup</h3>
+
+        <p>Today is: <span id="todayDate"></span></p>
+
+    </div>
+
+    <!-- Registration Form -->
+
+    <form action="thankyou.html">
+
+        <table>
+
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" maxlength="30"></td>
+
+                <td>M.I.:</td>
+                <td><input type="text" maxlength="1" size="1"></td>
+
+                <td>Last Name:</td>
+                <td><input type="text" maxlength="30"></td>
+            </tr>
+
+            <tr>
+                <td>Address Line 1:</td>
+                <td colspan="5">
+                    <input type="text" maxlength="30">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address Line 2:</td>
+                <td colspan="5">
+                    <input type="text" maxlength="30">
+                </td>
+            </tr>
+
+            <tr>
+                <td>City:</td>
+                <td><input type="text" maxlength="30"></td>
+
+                <td>State:</td>
+
+                <td>
+                    <select>
+                        <option>Select State</option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Connecticut</option>
+                        <option>Delaware</option>
+                        <option>District of Columbia</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Hawaii</option>
+                        <option>Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Maryland</option>
+                        <option>Massachusetts</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Oregon</option>
+                        <option>Pennsylvania</option>
+                        <option>Puerto Rico</option>
+                        <option>Rhode Island</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virginia</option>
+                        <option>Washington</option>
+                        <option>West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option>Wyoming</option>
+                    </select>
+                </td>
+
+                <td>Zip:</td>
+                <td><input type="text" maxlength="10"></td>
+            </tr>
+
+            <tr>
+                <td>DOB:</td>
+                <td><input type="text" placeholder="MM/DD/YYYY"></td>
+
+                <td>SSN #:</td>
+                <td><input type="password" maxlength="11"></td>
+            </tr>
+
+            <tr>
+                <td>Sex:</td>
+
+                <td colspan="5">
+                    <input type="radio" name="sex"> Male
+                    <input type="radio" name="sex"> Female
+                    <input type="radio" name="sex"> Other
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="email"></td>
+
+                <td>Phone #:</td>
+                <td><input type="tel" placeholder="(xxx)-xxx-xxxx"></td>
+
+                <td>Work #:</td>
+                <td><input type="tel" placeholder="(xxx)-xxx-xxxx"></td>
+            </tr>
+
+            <tr>
+                <td>User ID:</td>
+                <td><input type="text" maxlength="20"></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password"></td>
+            </tr>
+
+            <tr>
+                <td>Reenter Password:</td>
+                <td><input type="password"></td>
+            </tr>
+
+        </table>
+
+        <h3>Patient Details</h3>
+
+        <p>
+            Password must contain:
+        </p>
+
+        <ul>
+            <li>At least 1 Capital Letter</li>
+            <li>At least 1 Numerical Value</li>
+            <li>At least 1 Special Character (@ # $ % ^ & *)</li>
+        </ul>
+
+        <label>How are you feeling today?</label>
+
+        <br><br>
+
+        Not Okay
+
+        <input type="range" min="1" max="10">
+
+        Excellent
+
+        <br><br>
+
+        <label>Please tell us your reason for visit:</label>
+
+        <br>
+
+        <textarea rows="4" cols="50"></textarea>
+
+        <br><br>
+
+        <label>Check those that apply:</label>
+
+        <br><br>
+
+        <input type="checkbox"> Wellness Exam <br>
+        <input type="checkbox"> Cold / Flu / Respiratory <br>
+        <input type="checkbox"> Nausea / Vomiting <br>
+        <input type="checkbox"> Chronic Health Issues <br>
+        <input type="checkbox"> Injury <br>
+        <input type="checkbox"> Other
+
+        <br><br>
+
+        <label>Do you have insurance?</label>
+
+        <br>
+
+        <input type="radio" name="insurance"> Yes
+        <input type="radio" name="insurance"> No
+
+        <br><br>
+
+        <label>Have you been vaccinated?</label>
+
+        <br>
+
+        <input type="radio" name="vaccinated"> Yes
+        <input type="radio" name="vaccinated"> No
+
+        <br><br>
+
+        <label>Signature:</label>
+
+        <br>
+
+        <input type="text" size="40">
+
+        <br><br>
+
+        <label>Date:</label>
+
+        <br>
+
+        <input type="date">
+
+        <br><br>
+
+        <input type="reset" value="CLEAR AND START OVER">
+
+        <input type="submit" value="SUBMIT">
+
+    </form>
+
+    <!-- Footer -->
+
+    <div id="footer">
+
+        <h3>Daylight Medical Services</h3>
+
+        <p>
+            PO Box 18881
+            <br>
+            Houston, TX 77089
+        </p>
+
+        <button type="button">Contact Us</button>
+
+        <br><br>
+
+        <a href="https://facebook.com">Facebook</a> |
+        <a href="https://twitter.com">Twitter</a>
+
+    </div>
+
+</body>
+</html>
