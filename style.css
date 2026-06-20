@@ -8,6 +8,16 @@ body {
     margin: 20px;
 }
 
+/* Logo */
+
+.banner img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 70px:
+    height: auto;
+}
+
 /* Banner */
 
 .banner {
@@ -16,6 +26,7 @@ body {
     text-align: center;
     padding: 15px;
     border-radius: 10px;
+    position: relative;
 }
 
 /* Headings */
