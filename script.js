@@ -1,6 +1,5 @@
-        function displayDate() {
+   function displayDate() {
             var today = new Date();
-
             var options = {
                 weekday: 'long',
                 year: 'numeric',
@@ -12,7 +11,7 @@
                 today.toLocaleDateString("en-US", options);
         }
 }
-        function validatePassword() {
+   function validatePassword() {
 
         let pass=document.getElementById("password").value;
 
@@ -27,23 +26,17 @@
                 id="password"
                 onchange="validatePassword()">
 
-        function comparePasswords(){
+                        
+   function comparePasswords(){
                 let p1=document.getElementById("password").value;
-
                 let p2=document.getElementById("password2").value;
 
-                if(p1!=p2)
-                {
+                if(p1!==p2)   {
                 alert("Passwords do not match.");
                 }
-
 }
-                <input
-                type="password"
-                id="password2"
-                onchange="comparePasswords()">
 
-          function showHealth(){
+ function showHealth(){
         document.getElementById("healthValue").innerHTML =
         document.getElementById("health").value;
 
@@ -74,6 +67,3 @@ let id=document.getElementById("userid");
 id.value=id.value.toLowerCase();
 
 }
-<input
-id="userid"
-onblur="lowerUser()">
