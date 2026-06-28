@@ -21,12 +21,22 @@ F   function displayDate() {
         {
         alert("Password requirements not met.");
         }
-        <input
-                type="password"
-                id="password"
-                onchange="validatePassword()">
+ <input
+    type="password"
+    id="password"
+    name="password"
+    required
+    title="8-30 chars with upper, lower, number, special character"
+    onchange="validatePassword()">
 
-                        
+<input
+    type="password"
+    id="password2"
+    name="password2"
+    required
+    title="Re-enter password"
+    onchange="comparePasswords()">
+                                  
    function comparePasswords(){
                 let p1=document.getElementById("password").value;
                 let p2=document.getElementById("password2").value;
