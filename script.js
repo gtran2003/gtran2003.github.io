@@ -42,3 +42,9 @@
                 type="password"
                 id="password2"
                 onchange="comparePasswords()">
+
+          function showHealth(){
+        document.getElementById("healthValue").innerHTML =
+        document.getElementById("health").value;
+
+}
