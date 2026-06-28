@@ -48,3 +48,32 @@
         document.getElementById("health").value;
 
 }
+function reviewForm(){
+
+let review="";
+
+review+="<p><b>Name:</b> "
++document.getElementById("fname").value+" "
++document.getElementById("mi").value+" "
++document.getElementById("lname").value+
+"</p>";
+
+review+="<p><b>Email:</b> "
++document.getElementById("email").value+
+"</p>";
+
+review+="<p><b>Phone:</b> "
++document.getElementById("phone").value+
+"</p>";
+
+document.getElementById("reviewContent").innerHTML=review;
+
+}
+function lowerUser(){
+let id=document.getElementById("userid");
+id.value=id.value.toLowerCase();
+
+}
+<input
+id="userid"
+onblur="lowerUser()">
