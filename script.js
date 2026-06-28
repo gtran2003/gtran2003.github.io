@@ -11,32 +11,15 @@ F   function displayDate() {
                 today.toLocaleDateString("en-US", options);
         }
 }
+
    function validatePassword() {
-
         let pass=document.getElementById("password").value;
-
-        let regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;
-        
+        let regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;  
         if(!regex.test(pass))
         {
         alert("Password requirements not met.");
         }
- <input
-    type="password"
-    id="password"
-    name="password"
-    required
-    title="8-30 chars with upper, lower, number, special character"
-    onchange="validatePassword()">
-
-<input
-    type="password"
-    id="password2"
-    name="password2"
-    required
-    title="Re-enter password"
-    onchange="comparePasswords()">
-                                  
+   }
    function comparePasswords(){
                 let p1=document.getElementById("password").value;
                 let p2=document.getElementById("password2").value;
@@ -51,7 +34,9 @@ F   function displayDate() {
         document.getElementById("health").value;
 
 }
-function reviewForm(){
+
+               
+            function reviewForm(){
 
 let review="";
 
@@ -72,6 +57,7 @@ review+="<p><b>Phone:</b> "
 document.getElementById("reviewContent").innerHTML=review;
 
 }
+               
 function lowerUser(){
 let id=document.getElementById("userid");
 id.value=id.value.toLowerCase();
