@@ -10,7 +10,6 @@ F   function displayDate() {
             document.getElementById("todayDate").innerHTML =
                 today.toLocaleDateString("en-US", options);
         }
-}
 
    function validatePassword() {
         let pass=document.getElementById("password").value;
