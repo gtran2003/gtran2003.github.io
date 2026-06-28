@@ -1,4 +1,4 @@
-   function displayDate() {
+F   function displayDate() {
             var today = new Date();
             var options = {
                 weekday: 'long',
