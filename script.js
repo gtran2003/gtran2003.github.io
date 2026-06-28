@@ -7,17 +7,20 @@ F   function displayDate() {
                 day: 'numeric'
             };
 
-            document.getElementById("todayDate").innerHTML =
-                today.toLocaleDateString("en-US", options);
-        }
-
+        const el = document.getElementById("todayDate");
+    if (el) {
+        el.innerHTML = today.toLocaleDateString("en-US", options);
+    }
+}
    function validatePassword() {
         let pass=document.getElementById("password").value;
         let regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;  
-        if(!regex.test(pass))
-        {
+
+        if (!regex.test(pass)) {
         alert("Password requirements not met.");
-        }
+        return false;
+    }
+    return true;
    }
    function comparePasswords(){
                 let p1=document.getElementById("password").value;
@@ -25,31 +28,30 @@ F   function displayDate() {
 
                 if(p1!==p2)   {
                 alert("Passwords do not match.");
+            return false;
                 }
+             return true;
 }
 
  function showHealth(){
         document.getElementById("healthValue").innerHTML =
         document.getElementById("health").value;
 
-}
-
-               
-            function reviewForm(){
-
+}        
+ function reviewForm(){
 let review="";
 
-review+="<p><b>Name:</b> "
+            review+="<p><b>Name:</b> "
 +document.getElementById("fname").value+" "
 +document.getElementById("mi").value+" "
 +document.getElementById("lname").value+
 "</p>";
 
-review+="<p><b>Email:</b> "
+            review+="<p><b>Email:</b> "
 +document.getElementById("email").value+
 "</p>";
 
-review+="<p><b>Phone:</b> "
+            review+="<p><b>Phone:</b> "
 +document.getElementById("phone").value+
 "</p>";
 
