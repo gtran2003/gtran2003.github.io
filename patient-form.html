@@ -265,12 +265,13 @@ Description: Patient registration and learning how to use html to create forum
         <td>User ID:</td>
         <td>
             <input
-                type="text"
-                id="userid"
-                name="userid"
-                maxlength="20"
-                required
-                title="Choose a user ID.">
+    type="text"
+    id="userid"
+    name="userid"
+    maxlength="20"
+    required
+    title="User ID (letters/numbers/_/- only)"
+    onblur="lowerUser()">
         </td>
     </tr>
 
