@@ -48,6 +48,7 @@ let review="";
 "</p>";
 
             review+="<p><b>Email:</b> "
+                        
 +document.getElementById("email").value+
 "</p>";
 
@@ -63,4 +64,5 @@ function lowerUser(){
 let id=document.getElementById("userid");
 id.value=id.value.toLowerCase();
 
+            displayDate();
 }
