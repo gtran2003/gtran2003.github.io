@@ -1,3 +1,4 @@
+
 <!--
 Program name: Daylight Medical - patient-form.html
 Author: Gabrielle Tran
@@ -39,6 +40,7 @@ Description: Patient registration and learning how to use html to create forum
             <input 
                 type="text" 
                 id="fname" 
+                oninput="validateFirstName()"
                 name="fname" 
                 maxlength="30"
                 required
@@ -62,6 +64,7 @@ Description: Patient registration and learning how to use html to create forum
             <input 
                 type="text" 
                 id="lname" 
+                 oninput="validateLastName()"
                 name="lname" 
                 maxlength="30" 
                 required>
@@ -182,6 +185,7 @@ Description: Patient registration and learning how to use html to create forum
             <input 
                 type="email" 
                 id="email" 
+                oninput="validateEmail()"
                 name="email"
                 required>
         </td>
