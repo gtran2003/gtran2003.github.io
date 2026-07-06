@@ -99,6 +99,29 @@ function validateEmail(){
 function validateUser(){
             
 }
+function validateForm(){
+
+let ok=true;
+
+if(!validateFirstName()) ok=false;
+
+if(!validateLastName()) ok=false;
+
+if(!validatePassword()) ok=false;
+
+if(!comparePasswords()) ok=false;
+
+if(ok){
+
+document.getElementById("submitButton").style.display="inline";
+
+}
+
+else{
+
+alert("Please fix the errors.");
+
+}
 
 }
             
