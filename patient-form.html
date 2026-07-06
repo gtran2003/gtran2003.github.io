@@ -36,38 +36,70 @@ Description: Patient registration and learning how to use html to create forum
     <tr>
         <td>First Name:</td>
         <td>
-            <input type="text" id="fname" name="fname" maxlength="30" required>
+            <input 
+                type="text" 
+                id="fname" 
+                name="fname" 
+                maxlength="30"
+                required
+                title="enter 1-30 letters only. Apostrophes and hyphens acceptable.">
+        
         </td>
 
         <td>M.I.:</td>
         <td>
-            <input type="text" id="mi" name="mi" maxlength="1" size="1" pattern="[A-Za-z]?">
+            <input 
+                type= "text" 
+                id="mi" 
+                name="mi" 
+                maxlength="1"
+                size="1"
+                pattern="[A-Za-z]?">
         </td>
 
         <td>Last Name:</td>
         <td>
-            <input type="text" id="lname" name="lname" maxlength="30" required>
+            <input 
+                type="text" 
+                id="lname" 
+                name="lname" 
+                maxlength="30" 
+                required>
         </td>
     </tr>
 
     <tr>
         <td>Address Line 1:</td>
         <td colspan="5">
-            <input type="text" id="address1" name="address1" maxlength="30" required>
+            <input 
+                type="text" 
+                id="address1" 
+                name="address1" 
+                maxlength="30" 
+                required>
         </td>
     </tr>
 
     <tr>
         <td>Address Line 2:</td>
         <td colspan="5">
-            <input type="text" id="address2" name="address2" maxlength="30">
+            <input 
+                type="text" 
+                id="address2" 
+                name="address2" 
+                maxlength="30">
         </td>
     </tr>
 
     <tr>
         <td>City:</td>
         <td>
-            <input type="text" id="city" name="city" maxlength="30" required>
+            <input 
+                type="text" 
+                id="city" 
+                name="city" 
+                maxlength="30" 
+                required>
         </td>
 
         <td>State:</td>
@@ -85,71 +117,125 @@ Description: Patient registration and learning how to use html to create forum
 
         <td>Zip:</td>
         <td>
-            <input type="text" id="zip" name="zip" maxlength="10" required pattern="\d{5}(-\d{4})?">
+            <input 
+                type="text" 
+                id="zip" name="zip" 
+                maxlength="10" 
+                equired pattern="\d{5}(-\d{4})?">
         </td>
     </tr>
 
     <tr>
         <td>DOB:</td>
         <td>
-            <input type="date" id="dob" name="dob" required>
+            <input 
+                type="date" 
+                id="dob" 
+                name="dob" 
+                required>
         </td>
 
         <td>SSN:</td>
         <td>
-            <input type="password" id="ssn" name="ssn" maxlength="11" pattern="\d{3}-\d{2}-\d{4}" required>
+            <input 
+                type="password" 
+                id="ssn" 
+                name="ssn" 
+                maxlength="11"
+                pattern="\d{3}-\d{2}-\d{4}" 
+                required>
         </td>
     </tr>
 
     <tr>
         <td>Sex:</td>
         <td colspan="5">
-            <input type="radio" id="male" name="sex" value="Male">
-            <label for="male">Male</label>
+            <input 
+                type="radio" 
+                id="male" 
+                name="sex" 
+                value="Male">
+            <label for="male">Male
+            </label>
 
-            <input type="radio" id="female" name="sex" value="Female">
-            <label for="female">Female</label>
+            <input 
+                type="radio" 
+                id="female" 
+                name="sex" 
+                value="Female">
+            <label for="female">Female
+            </label>
 
-            <input type="radio" id="other" name="sex" value="Other">
-            <label for="other">Other</label>
+            <input 
+                type="radio" 
+                id="other" 
+                name="sex"
+                value="Other">
+            <label for="other">Other
+            </label>
         </td>
     </tr>
 
     <tr>
         <td>Email:</td>
         <td>
-            <input type="email" id="email" name="email" required>
+            <input 
+                type="email" 
+                id="email" 
+                name="email"
+                required>
         </td>
 
         <td>Phone:</td>
         <td>
-            <input type="tel" id="phone" name="phone" placeholder="713-555-1234">
+            <input
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="713-555-1234">
         </td>
 
         <td>Work:</td>
         <td>
-            <input type="tel" id="workphone" name="workphone" placeholder="713-555-1234">
+            <input 
+                type="tel" 
+                id="workphone" 
+                name="workphone" 
+                placeholder="713-555-1234">
         </td>
     </tr>
 
     <tr>
         <td>User ID:</td>
         <td>
-            <input type="text" id="userid" name="userid" maxlength="20" required onblur="lowerUser()">
+            <input 
+                type="text"
+                id="userid"
+                name="userid" 
+                maxlength="20" 
+                required onblur="lowerUser()">
         </td>
     </tr>
 
     <tr>
         <td>Password:</td>
         <td>
-            <input type="password" id="password" name="password" required>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                required>
         </td>
     </tr>
 
     <tr>
         <td>Reenter Password:</td>
         <td>
-            <input type="password" id="password2" name="password2" required>
+            <input
+                type="password" 
+                id="password2" 
+                name="password2" 
+                required>
         </td>
     </tr>
 </table>
@@ -166,55 +252,102 @@ Description: Patient registration and learning how to use html to create forum
 <label for="health">How are you feeling today?</label><br><br>
 
 Not Okay
-<input type="range" id="health" name="health" min="1" max="10" value="5" oninput="showHealth()">
-<span id="healthValue">5</span>
+<input 
+    type="range" 
+    id="health" 
+    name="health" 
+    min="1" 
+    max="10" 
+    value="5"
+    oninput="showHealth()">
+<span id="healthValue">5
+</span>
 Excellent
 
 <br><br>
 
 <label for="reason">Reason for visit:</label><br>
-<textarea id="reason" name="reason" rows="4" cols="50"></textarea>
+<textarea 
+    id="reason"
+    name="reason"
+    rows="4"
+    cols="50"></textarea>
 
 <br><br>
 
 <label>Visit Reason:</label><br><br>
 
-<input type="checkbox" id="wellness" name="visitReason" value="Wellness">
-<label for="wellness">Wellness Exam</label><br>
+<input 
+    type="checkbox" 
+    id="wellness" 
+    name="visitReason"
+    value="Wellness">
+<label for="wellness">Wellness Exam
+</label><br>
 
-<input type="checkbox" id="cold" name="visitReason" value="Cold">
+<input 
+    type="checkbox"
+    id="cold" 
+    name="visitReason" value="Cold">
 <label for="cold">Cold / Flu</label><br>
 
-<input type="checkbox" id="injury" name="visitReason" value="Injury">
+<input 
+    type="checkbox" 
+    id="injury"
+    name="visitReason"
+    value="Injury">
 <label for="injury">Injury</label>
 
 <br><br>
 
 <label>Insurance:</label><br>
-<input type="radio" name="insurance" value="Yes"> Yes
-<input type="radio" name="insurance" value="No"> No
+<input 
+    type="radio" 
+    name="insurance" 
+    value="Yes"> Yes
+<input 
+    type="radio" 
+    name="insurance"
+    value="No"> No
 
 <br><br>
 
 <label>Vaccinated:</label><br>
-<input type="radio" name="vaccinated" value="Yes"> Yes
-<input type="radio" name="vaccinated" value="No"> No
+<input 
+    type="radio"
+    name="vaccinated"
+    value="Yes"> Yes
+<input 
+    type="radio" 
+    name="vaccinated" value="No"> No
 
 <br><br>
 
 <label>Signature:</label><br>
-<input type="text" id="signature" name="signature">
+<input 
+    type="text" 
+    id="signature" 
+    name="signature">
 
 <br><br>
 
 <label>Date:</label><br>
-<input type="date" id="signDate" name="signDate">
+<input 
+    type="date" 
+    id="signDate" 
+    name="signDate">
 
 <br><br>
 
-<input type="button" value="Review" onclick="reviewForm()">
-<input type="submit" value="Submit">
-<input type="reset" value="Clear">
+<input
+    type="button"
+    value="Review" onclick="reviewForm()">
+<input 
+    type="submit" 
+    value="Submit">
+<input
+    type="reset" 
+    value="Clear">
 
 <div id="reviewArea">
     <h2>Please Review Your Information</h2>
