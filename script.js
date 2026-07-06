@@ -64,5 +64,9 @@ function lowerUser(){
 let id=document.getElementById("userid");
 id.value=id.value.toLowerCase();
 
-            displayDate();
 }
+
+displayDate();
+}
+
+
