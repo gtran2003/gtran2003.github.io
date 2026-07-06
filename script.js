@@ -82,6 +82,19 @@ function validateFirstName(){
             return false;
 
             }
+function validateEmail(){
+            let email=document.getElementById("email");
+            email.value=email.value.toLowerCase();
+            let regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let error=document.getElementByID("emailError");
+                                              if(regex.test(email.value)){
+                        error.innerHTML="";
+            }
+
+            else{
+                        error.innerHTML="invalid email.")
+            }
 
 }
+            
 
