@@ -28,7 +28,8 @@ F   function displayDate() {
                 let p2=document.getElementById("password2").value;
 
                 if(p1!==p2)   {
-                alert("Passwords do not match.");
+                passwordError2.innerHTML=
+                        "Passwords don't match.
             return false;
                 }
              return true;
