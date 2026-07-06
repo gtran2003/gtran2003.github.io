@@ -17,7 +17,8 @@ F   function displayDate() {
         let regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;  
 
         if (!regex.test(pass)) {
-        alert("Password requirements not met.");
+            document.getElementById("passwordError").innerHTML=
+            "Password must have uppercase, lowercase, number and symbol.";
         return false;
     }
     return true;
