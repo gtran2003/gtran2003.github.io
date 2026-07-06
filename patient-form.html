@@ -305,6 +305,20 @@ Excellent
     value="Injury">
 <label for="injury">Injury</label>
 
+    <input 
+    type="checkbox" 
+    id="Covid-19 Vaccine"
+    name="visitReason"
+    value="Covid-19 Vaccine">
+<label for="Covid-19 Vaccine">Covid-19 Vaccine</label>
+    
+    <input 
+    type="checkbox" 
+    id="Refill Prescription"
+    name="visitReason"
+    value="Refill Prescription">
+<label for="Refill Prescription">Refill Prescription</label>
+
 <br><br>
 
 <label>Insurance:</label><br>
@@ -350,8 +364,16 @@ Excellent
     type="button"
     value="Review" onclick="reviewForm()">
 <input 
-    type="submit" 
-    value="Submit">
+    type="button"
+    value="Validate"
+    onclick="validateForm()">
+
+<input
+    type="submit"
+    id+"submitButton"
+    value="Submit"
+    style="display:none;">
+    
 <input
     type="reset" 
     value="Clear">
