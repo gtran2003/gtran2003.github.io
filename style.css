@@ -110,3 +110,9 @@ button:hover {
 #footer a:visited {
     color: #fff0d0;
 }
+
+.error{
+    color:red;
+    font-sizeL12px;
+    display:block;
+}
