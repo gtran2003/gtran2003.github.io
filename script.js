@@ -69,4 +69,19 @@ id.value=id.value.toLowerCase();
 displayDate();
 }
 
+function validateFirstName(){
+            let name= document.getElementById("fname").value;
+            let error=document.getElementById("fnameError");
+            let regex=/^[A-Za-z'-]{1,30}$/;
+            if(regex.test(name)){
+                        error.innerHTML="":
+                        return true;
+            }
+            else{
+            error.innerHTML="Letters only.";
+            return false;
+
+            }
+
+}
 
