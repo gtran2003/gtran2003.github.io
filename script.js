@@ -97,7 +97,20 @@ function validateEmail(){
                         error.innerHTML="invalid email.")
             }
 function validateUser(){
-            
+
+    let user = document.getElementById("userid").value;
+    let error = document.getElementById("useridError");
+
+    let regex = /^[A-Za-z][A-Za-z0-9_-]{4,19}$/;
+
+    if(regex.test(user)){
+        error.innerHTML = "";
+        return true;
+    }
+    else{
+        error.innerHTML = "User ID must start with a letter and be 5-20 characters.";
+        return false;
+    }
 }
 function validateForm(){
 
