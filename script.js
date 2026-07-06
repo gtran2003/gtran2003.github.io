@@ -96,6 +96,9 @@ function validateEmail(){
             else{
                         error.innerHTML="invalid email.")
             }
+function validateUser(){
+            
+}
 
 }
             
