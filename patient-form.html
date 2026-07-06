@@ -45,6 +45,8 @@ Description: Patient registration and learning how to use html to create forum
                 maxlength="30"
                 required
                 title="enter 1-30 letters only. Apostrophes and hyphens acceptable.">
+            
+            <span id="fnameError" class="error"></span>
         
         </td>
 
@@ -68,6 +70,7 @@ Description: Patient registration and learning how to use html to create forum
                 name="lname" 
                 maxlength="30" 
                 required>
+            <span id="lnameError" class="error"></span>
         </td>
     </tr>
 
@@ -188,6 +191,7 @@ Description: Patient registration and learning how to use html to create forum
                 oninput="validateEmail()"
                 name="email"
                 required>
+            <span id="emailError" class="error"></span>
         </td>
 
         <td>Phone:</td>
@@ -219,6 +223,7 @@ Description: Patient registration and learning how to use html to create forum
                 oninput="validateUser()"
                 maxlength="20" 
                 required onblur="lowerUser()">
+            <span id="useridError" class="error"></span>
         </td>
     </tr>
 
@@ -231,6 +236,7 @@ Description: Patient registration and learning how to use html to create forum
                 name="password" 
                 oninput=:validatePassword()"
                 required>
+            <span id="passwordError" class="error"></span>
         </td>
     </tr>
 
@@ -243,6 +249,7 @@ Description: Patient registration and learning how to use html to create forum
                 name="password2" 
                 oninput="comparePasswords()"
                 required>
+            <span id="password2Error" class="error"></span>
         </td>
     </tr>
 </table>
