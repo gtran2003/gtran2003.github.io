@@ -158,6 +158,17 @@ function validateForm(){
     else{
         alert("Please fix the errors.");
     }
+    
+        if(document.getElementById("rememberMe").checked){
+setCookie(
+"firstname",
+document.getElementById("fname").value
+);
+}
+else{
+eraseCookie();
+localStorage.clear();
+    }
 }
 document.getElementById("fname").addEventListener("input", validateFirstName);
 document.getElementById("lname").addEventListener("input", validateLastName);
@@ -226,3 +237,4 @@ document.getElementById("welcomeMessage").innerHTML=
 eraseCookie();
 localStorage.clear();
 document.getElementById("patientForm").reset();
+
