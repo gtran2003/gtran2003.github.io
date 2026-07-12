@@ -65,7 +65,6 @@ function lowerUser(){
 
 }
 
-displayDate();
 function validateFirstName(){
     let name = document.getElementById("fname").value;
     let error = document.getElementById("fnameError");
@@ -267,6 +266,7 @@ function clearUser(){
     localStorage.clear();
     document.getElementById("patientForm").reset();
 }
+displayDate();
     function displayDate() {
     loadData();
     var today = new Date();
@@ -282,3 +282,6 @@ function clearUser(){
         el.innerHTML = today.toLocaleDateString("en-US", options);
     }
 }
+window.onload=function(){
+    displayDate();
+};
