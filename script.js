@@ -237,4 +237,13 @@ document.getElementById("welcomeMessage").innerHTML=
 eraseCookie();
 localStorage.clear();
 document.getElementById("patientForm").reset();
-
+function saveData(){
+    localStorage.setItem("fname", document.getElementById("fname").value);
+    localStorage.setItem("lname", document.getElementById("lname").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("phone", document.getElementById("phone").value);
+    localStorage.setItem("city", document.getElementById("city").value);
+    localStorage.setItem("zip", document.getElementById("zip").value);
+    localStorage.setItem("userid", document.getElementById("userid").value);
+    localStorage.setItem("health", document.getElementById("health").value);
+}
