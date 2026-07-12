@@ -74,14 +74,6 @@ function validateFirstName(){
         error.innerHTML = "";
         return true;
     }
-document.getElementById("fname").addEventListener("blur", saveData);
-document.getElementById("lname").addEventListener("blur", saveData);
-document.getElementById("email").addEventListener("blur", saveData);
-document.getElementById("phone").addEventListener("blur", saveData);
-document.getElementById("city").addEventListener("blur", saveData);
-document.getElementById("zip").addEventListener("blur", saveData);
-document.getElementById("userid").addEventListener("blur", saveData);
-document.getElementById("health").addEventListener("change", saveData);
 
     else {
         error.innerHTML = "Letters only.";
@@ -163,6 +155,7 @@ if(document.getElementById("rememberMe").checked){
 else{
     eraseCookie();
 }
+}
 document.getElementById("fname").addEventListener("input", validateFirstName);
 document.getElementById("lname").addEventListener("input", validateLastName);
 document.getElementById("email").addEventListener("input", validateEmail);
@@ -170,6 +163,14 @@ document.getElementById("userid").addEventListener("input", validateUser);
 document.getElementById("password").addEventListener("input", validatePassword);
 document.getElementById("password2").addEventListener("input", comparePasswords);
 document.getElementById("health").addEventListener("input", showHealth);
+document.getElementById("fname").addEventListener("blur", saveData);
+document.getElementById("lname").addEventListener("blur", saveData);
+document.getElementById("email").addEventListener("blur", saveData);
+document.getElementById("phone").addEventListener("blur", saveData);
+document.getElementById("city").addEventListener("blur", saveData);
+document.getElementById("zip").addEventListener("blur", saveData);
+document.getElementById("userid").addEventListener("blur", saveData);
+document.getElementById("health").addEventListener("change", saveData);
 async function loadStates(){
     try{
         const response = await fetch("states.json");
