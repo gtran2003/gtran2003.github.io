@@ -1,47 +1,38 @@
- function displayDate() {
-            var today = new Date();
-            var options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
+function displayDate() {
+    var today = new Date();
+    var options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
 
-        const el = document.getElementById("todayDate");
+    const el = document.getElementById("todayDate");
     if (el) {
         el.innerHTML = today.toLocaleDateString("en-US", options);
     }
 }
-   function validatePassword(){
 
+function validatePassword(){
     let pass = document.getElementById("password").value;
-
     let error = document.getElementById("passwordError");
-
     let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;
-
     if(regex.test(pass)){
-
         error.innerHTML = "";
         return true;
-
     }
-
     else{
-
         error.innerHTML =
         "Password must contain uppercase, lowercase, number and symbol.";
-
         return false;
-
     }
-
 }
-  function comparePasswords(){
+
+function comparePasswords(){
 
     let p1 = document.getElementById("password").value;
     let p2 = document.getElementById("password2").value;
-    let error = document.getElementById("passwordError2");
+    let error = document.getElementById("password2Error");
 
     if(p1 !== p2){
 
@@ -52,133 +43,133 @@
 
     error.innerHTML = "";
     return true;
-
 }
 
- function showHealth(){
-        document.getElementById("healthValue").innerHTML =
-        document.getElementById("health").value;
-
-}        
- function reviewForm(){
-let review="";
-
-            review+="<p><b>Name:</b> "
-+document.getElementById("fname").value+" "
-+document.getElementById("mi").value+" "
-+document.getElementById("lname").value+
-"</p>";
-
-            review+="<p><b>Email:</b> "
-                        
-+document.getElementById("email").value+
-"</p>";
-
-            review+="<p><b>Phone:</b> "
-+document.getElementById("phone").value+
-"</p>";
-
-document.getElementById("reviewContent").innerHTML=review;
-
+function showHealth(){
+    document.getElementById("healthValue").innerHTML =
+    document.getElementById("health").value;
 }
-               
+
+function reviewForm(){
+    let review="";
+    review += "<p><b>Name:</b> "
+    + document.getElementById("fname").value + " "
+    + document.getElementById("mi").value + " "
+    + document.getElementById("lname").value +
+    "</p>";
+     review += "<p><b>Email:</b> "
+    + document.getElementById("email").value +
+    "</p>";
+     review += "<p><b>Phone:</b> "
+    + document.getElementById("phone").value +
+    "</p>";
+      review += "<p><b>User ID:</b> "
+    + document.getElementById("userid").value +
+    "</p>";
+
+    document.getElementById("reviewContent").innerHTML = review;
+}
+
 function lowerUser(){
-let id=document.getElementById("userid");
-id.value=id.value.toLowerCase();
+
+    let id = document.getElementById("userid");
+
+    id.value = id.value.toLowerCase();
 
 }
 
 displayDate();
-
 function validateFirstName(){
-            let name= document.getElementById("fname").value;
-            let error=document.getElementById("fnameError");
-            let regex=/^[A-Za-z'-]{1,30}$/;
-            if(regex.test(name)){
-                        error.innerHTML="";
-                        return true;
-            }
-            else{
-            error.innerHTML="Letters only.";
-            return false;
+    let name = document.getElementById("fname").value;
+    let error = document.getElementById("fnameError");
+    let regex = /^[A-Za-z'-]{1,30}$/;
+    if(regex.test(name)){
+        error.innerHTML = "";
+        return true;
+    }
 
-            }
+    else {
+        error.innerHTML = "Letters only.";
+        return false;
+    }
+
+}
+
+function validateLastName(){
+    let name = document.getElementById("lname").value;
+    let error = document.getElementById("lnameError");
+    let regex = /^[A-Za-z'-]{1,30}$/;
+    if(regex.test(name)){
+        error.innerHTML = "";
+        return true;
+    }
+
+    else{
+       error.innerHTML = "Letters only.";
+        return false;
+    }
+}
+
 function validateEmail(){
-
     let email = document.getElementById("email");
-
     email.value = email.value.toLowerCase();
-
     let error = document.getElementById("emailError");
-
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if(regex.test(email.value)){
-
         error.innerHTML = "";
         return true;
 
     }
 
     else{
-
         error.innerHTML = "Invalid email.";
         return false;
 
     }
 
 }
+
 function validateUser(){
 
     let user = document.getElementById("userid").value;
     let error = document.getElementById("useridError");
-
     let regex = /^[A-Za-z][A-Za-z0-9_-]{4,19}$/;
-
     if(regex.test(user)){
         error.innerHTML = "";
         return true;
     }
+
     else{
-        error.innerHTML = "User ID must start with a letter and be 5-20 characters.";
+        error.innerHTML =
+        "User ID must start with a letter and be 5-20 characters.";
         return false;
+
     }
+
 }
+
 function validateForm(){
-
     let ok = true;
-
     if(!validateFirstName()) ok = false;
-
+    if(!validateLastName()) ok = false;
     if(!validateEmail()) ok = false;
-
     if(!validateUser()) ok = false;
-
     if(!validatePassword()) ok = false;
-
     if(!comparePasswords()) ok = false;
-
     if(ok){
-
-        document.getElementById("submitButton").style.display="inline";
-
+        alert("Validation successful.");
+        document.getElementById("submitButton").style.display = "inline";
     }
 
     else{
-
         alert("Please fix the errors.");
-
     }
-
 }
+
 document.getElementById("fname").addEventListener("input", validateFirstName);
-
+document.getElementById("lname").addEventListener("input", validateLastName);
 document.getElementById("email").addEventListener("input", validateEmail);
-
 document.getElementById("userid").addEventListener("input", validateUser);
-
 document.getElementById("password").addEventListener("input", validatePassword);
-
 document.getElementById("password2").addEventListener("input", comparePasswords);
-
 document.getElementById("health").addEventListener("input", showHealth);
