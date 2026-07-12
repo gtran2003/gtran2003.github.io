@@ -108,12 +108,30 @@ button:hover {
 }
 
 #footer a:visited {
-    color: #fff0d0;
+    color:#fff0d0;
 }
 
 .error{
     color:red;
-    font-sizeL12px;
+    font-size:L12px;
     display:block;
     margin-top:3px;
+}
+
+.banner{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+body{
+    padding=top:170px;
+}
+
+#footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
 }
