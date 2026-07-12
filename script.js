@@ -1,4 +1,4 @@
-F   function displayDate() {
+ function displayDate() {
             var today = new Date();
             var options = {
                 weekday: 'long',
@@ -12,27 +12,47 @@ F   function displayDate() {
         el.innerHTML = today.toLocaleDateString("en-US", options);
     }
 }
-   function validatePassword() {
-        let pass=document.getElementById("password").value;
-        let regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;  
+   function validatePassword(){
 
-        if (!regex.test(pass)) {
-            document.getElementById("passwordError").innerHTML=
-            "Password must have uppercase, lowercase, number and symbol.";
-        return false;
+    let pass = document.getElementById("password").value;
+
+    let error = document.getElementById("passwordError");
+
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=<>.?/-]).{8,30}$/;
+
+    if(regex.test(pass)){
+
+        error.innerHTML = "";
+        return true;
+
     }
-    return true;
-   }
-   function comparePasswords(){
-                let p1=document.getElementById("password").value;
-                let p2=document.getElementById("password2").value;
 
-                if(p1!==p2)   {
-                passwordError2.innerHTML=
-                        "Passwords don't match.
-            return false;
-                }
-             return true;
+    else{
+
+        error.innerHTML =
+        "Password must contain uppercase, lowercase, number and symbol.";
+
+        return false;
+
+    }
+
+}
+  function comparePasswords(){
+
+    let p1 = document.getElementById("password").value;
+    let p2 = document.getElementById("password2").value;
+    let error = document.getElementById("passwordError2");
+
+    if(p1 !== p2){
+
+        error.innerHTML = "Passwords don't match.";
+        return false;
+
+    }
+
+    error.innerHTML = "";
+    return true;
+
 }
 
  function showHealth(){
@@ -69,14 +89,13 @@ id.value=id.value.toLowerCase();
 }
 
 displayDate();
-}
 
 function validateFirstName(){
             let name= document.getElementById("fname").value;
             let error=document.getElementById("fnameError");
             let regex=/^[A-Za-z'-]{1,30}$/;
             if(regex.test(name)){
-                        error.innerHTML="":
+                        error.innerHTML="";
                         return true;
             }
             else{
@@ -85,17 +104,30 @@ function validateFirstName(){
 
             }
 function validateEmail(){
-            let email=document.getElementById("email");
-            email.value=email.value.toLowerCase();
-            let regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            let error=document.getElementByID("emailError");
-                                              if(regex.test(email.value)){
-                        error.innerHTML="";
-            }
 
-            else{
-                        error.innerHTML="invalid email.")
-            }
+    let email = document.getElementById("email");
+
+    email.value = email.value.toLowerCase();
+
+    let error = document.getElementById("emailError");
+
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(regex.test(email.value)){
+
+        error.innerHTML = "";
+        return true;
+
+    }
+
+    else{
+
+        error.innerHTML = "Invalid email.";
+        return false;
+
+    }
+
+}
 function validateUser(){
 
     let user = document.getElementById("userid").value;
@@ -114,28 +146,39 @@ function validateUser(){
 }
 function validateForm(){
 
-let ok=true;
+    let ok = true;
 
-if(!validateFirstName()) ok=false;
+    if(!validateFirstName()) ok = false;
 
-if(!validateLastName()) ok=false;
+    if(!validateEmail()) ok = false;
 
-if(!validatePassword()) ok=false;
+    if(!validateUser()) ok = false;
 
-if(!comparePasswords()) ok=false;
+    if(!validatePassword()) ok = false;
 
-if(ok){
+    if(!comparePasswords()) ok = false;
 
-document.getElementById("submitButton").style.display="inline";
+    if(ok){
+
+        document.getElementById("submitButton").style.display="inline";
+
+    }
+
+    else{
+
+        alert("Please fix the errors.");
+
+    }
 
 }
+document.getElementById("fname").addEventListener("input", validateFirstName);
 
-else{
+document.getElementById("email").addEventListener("input", validateEmail);
 
-alert("Please fix the errors.");
+document.getElementById("userid").addEventListener("input", validateUser);
 
-}
+document.getElementById("password").addEventListener("input", validatePassword);
 
-}
-            
+document.getElementById("password2").addEventListener("input", comparePasswords);
 
+document.getElementById("health").addEventListener("input", showHealth);
