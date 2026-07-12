@@ -211,3 +211,18 @@ function eraseCooke(){
     document.cookie=
         "firstname=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
 }
+
+    let first = getCookie("firstname");
+if(first!=""){
+document.getElementById("welcomeMessage").innerHTML =
+"Welcome back, "+first;
+document.getElementById("fname").value=first;
+}
+    
+else{
+document.getElementById("welcomeMessage").innerHTML=
+"Welcome New User";
+}
+eraseCookie();
+localStorage.clear();
+document.getElementById("patientForm").reset();
