@@ -1,18 +1,4 @@
-function displayDate() {
-    loadData();
-    var today = new Date();
-    var options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
 
-    const el = document.getElementById("todayDate");
-    if (el) {
-        el.innerHTML = today.toLocaleDateString("en-US", options);
-    }
-}
 
 function validatePassword(){
     let pass = document.getElementById("password").value;
@@ -82,6 +68,12 @@ function lowerUser(){
 displayDate();
 function validateFirstName(){
     let name = document.getElementById("fname").value;
+    let error = document.getElementById("fnameError");
+    let regex = /^[A-Za-z'-]{1,30}$/;
+    if(regex.test(name)){
+        error.innerHTML = "";
+        return true;
+    }
 document.getElementById("fname").addEventListener("blur", saveData);
 document.getElementById("lname").addEventListener("blur", saveData);
 document.getElementById("email").addEventListener("blur", saveData);
@@ -90,12 +82,6 @@ document.getElementById("city").addEventListener("blur", saveData);
 document.getElementById("zip").addEventListener("blur", saveData);
 document.getElementById("userid").addEventListener("blur", saveData);
 document.getElementById("health").addEventListener("change", saveData);
-    let error = document.getElementById("fnameError");
-    let regex = /^[A-Za-z'-]{1,30}$/;
-    if(regex.test(name)){
-        error.innerHTML = "";
-        return true;
-    }
 
     else {
         error.innerHTML = "Letters only.";
@@ -168,16 +154,14 @@ function validateForm(){
         alert("Please fix the errors.");
     }
     
-        if(document.getElementById("rememberMe").checked){
-setCookie(
-"firstname",
-document.getElementById("fname").value
-);
+if(document.getElementById("rememberMe").checked){
+    setCookie(
+        "firstname",
+        document.getElementById("fname").value
+    );
 }
 else{
-eraseCookie();
-localStorage.clear();
-    }
+    eraseCookie();
 }
 document.getElementById("fname").addEventListener("input", validateFirstName);
 document.getElementById("lname").addEventListener("input", validateLastName);
@@ -227,7 +211,7 @@ return c.substring(cookieName.length,c.length);
 
 return "";
 }
-function eraseCooke(){
+function eraseCookie(){
     document.cookie=
         "firstname=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
 }
@@ -243,9 +227,7 @@ else{
 document.getElementById("welcomeMessage").innerHTML=
 "Welcome New User";
 }
-eraseCookie();
-localStorage.clear();
-document.getElementById("patientForm").reset();
+
 function loadData(){
     document.getElementById("fname").value =
         localStorage.getItem("fname") || "";
@@ -283,4 +265,19 @@ function saveData(){
 function clearUser(){
     localStorage.clear();
     document.getElementById("patientForm").reset();
+}
+    function displayDate() {
+    loadData();
+    var today = new Date();
+    var options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+
+    const el = document.getElementById("todayDate");
+    if (el) {
+        el.innerHTML = today.toLocaleDateString("en-US", options);
+    }
 }
