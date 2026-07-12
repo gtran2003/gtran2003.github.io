@@ -182,4 +182,32 @@ async function loadStates(){
         console.log(error);
     }
 }
+
 loadStates();
+function setCookie(name,value){
+let expire = new Date();
+expire.setHours(expire.getHours()+48);
+document.cookie =
+name+"="+value+
+";expires="+expire.toUTCString()+
+";path=/";
+
+}
+    function getCookie(name){
+let cookieName = name+"=";
+let decoded = decodeURIComponent(document.cookie);
+let cookies = decoded.split(";");
+for(let i=0;i<cookies.length;i++){
+let c = cookies[i];
+while(c.charAt(0)==" ")
+c = c.substring(1);
+if(c.indexOf(cookieName)==0)
+return c.substring(cookieName.length,c.length);
+}
+
+return "";
+}
+function eraseCooke(){
+    document.cookie=
+        "firstname=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+}
