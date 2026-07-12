@@ -103,7 +103,6 @@ function validateLastName(){
         error.innerHTML = "";
         return true;
     }
-
     else{
        error.innerHTML = "Letters only.";
         return false;
@@ -118,19 +117,14 @@ function validateEmail(){
     if(regex.test(email.value)){
         error.innerHTML = "";
         return true;
-
     }
-
     else{
         error.innerHTML = "Invalid email.";
         return false;
-
     }
-
 }
 
 function validateUser(){
-
     let user = document.getElementById("userid").value;
     let error = document.getElementById("useridError");
     let regex = /^[A-Za-z][A-Za-z0-9_-]{4,19}$/;
@@ -160,12 +154,11 @@ function validateForm(){
         alert("Validation successful.");
         document.getElementById("submitButton").style.display = "inline";
     }
-
+        
     else{
         alert("Please fix the errors.");
     }
 }
-
 document.getElementById("fname").addEventListener("input", validateFirstName);
 document.getElementById("lname").addEventListener("input", validateLastName);
 document.getElementById("email").addEventListener("input", validateEmail);
@@ -173,3 +166,20 @@ document.getElementById("userid").addEventListener("input", validateUser);
 document.getElementById("password").addEventListener("input", validatePassword);
 document.getElementById("password2").addEventListener("input", comparePasswords);
 document.getElementById("health").addEventListener("input", showHealth);
+async function loadStates(){
+    try{
+        const response = await fetch("states.json");
+        const states = await response.json();
+        const dropdown = document.getElementById("state");
+        states.forEach(function(state){
+            let option = document.createElement("option");
+            option.value = state.abbr;
+            option.textContent = state.name;
+            dropdown.appendChild(option);
+        });
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+loadStates();
