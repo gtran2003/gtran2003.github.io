@@ -1,4 +1,5 @@
 function displayDate() {
+    loadData();
     var today = new Date();
     var options = {
         weekday: 'long',
@@ -81,6 +82,14 @@ function lowerUser(){
 displayDate();
 function validateFirstName(){
     let name = document.getElementById("fname").value;
+document.getElementById("fname").addEventListener("blur", saveData);
+document.getElementById("lname").addEventListener("blur", saveData);
+document.getElementById("email").addEventListener("blur", saveData);
+document.getElementById("phone").addEventListener("blur", saveData);
+document.getElementById("city").addEventListener("blur", saveData);
+document.getElementById("zip").addEventListener("blur", saveData);
+document.getElementById("userid").addEventListener("blur", saveData);
+document.getElementById("health").addEventListener("change", saveData);
     let error = document.getElementById("fnameError");
     let regex = /^[A-Za-z'-]{1,30}$/;
     if(regex.test(name)){
@@ -237,6 +246,30 @@ document.getElementById("welcomeMessage").innerHTML=
 eraseCookie();
 localStorage.clear();
 document.getElementById("patientForm").reset();
+function loadData(){
+    document.getElementById("fname").value =
+        localStorage.getItem("fname") || "";
+    document.getElementById("lname").value =
+        localStorage.getItem("lname") || "";
+    document.getElementById("email").value =
+        localStorage.getItem("email") || "";
+    document.getElementById("phone").value =
+        localStorage.getItem("phone") || "";
+    document.getElementById("city").value =
+        localStorage.getItem("city") || "";
+    document.getElementById("zip").value =
+        localStorage.getItem("zip") || "";
+    document.getElementById("userid").value =
+        localStorage.getItem("userid") || "";
+
+    let health = localStorage.getItem("health");
+
+    if(health){
+        document.getElementById("health").value = health;
+        document.getElementById("healthValue").innerHTML = health;
+        
+    }
+}
 function saveData(){
     localStorage.setItem("fname", document.getElementById("fname").value);
     localStorage.setItem("lname", document.getElementById("lname").value);
@@ -246,4 +279,8 @@ function saveData(){
     localStorage.setItem("zip", document.getElementById("zip").value);
     localStorage.setItem("userid", document.getElementById("userid").value);
     localStorage.setItem("health", document.getElementById("health").value);
+}
+function clearUser(){
+    localStorage.clear();
+    document.getElementById("patientForm").reset();
 }
