@@ -124,7 +124,7 @@ Description: Patient registration and learning how to use html to create forum
                 type="text" 
                 id="zip" name="zip" 
                 maxlength="10" 
-                equired pattern="\d{5}(-\d{4})?">
+                required pattern="\d{5}(-\d{4})?">
         </td>
     </tr>
 
@@ -231,7 +231,12 @@ Description: Patient registration and learning how to use html to create forum
                 type="password" 
                 id="password" 
                 name="password" 
-                oninput=:validatePassword()"
+                <input 
+    type="password" 
+    id="password" 
+    name="password" 
+    oninput="validatePassword()"
+    required>
                 required>
             <span id="passwordError" class="error"></span>
         </td>
